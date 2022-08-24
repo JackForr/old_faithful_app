@@ -10,11 +10,20 @@ ui <- fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
+      sliderInput(inputId = "eruptionLength",
+                  label = "Length of Eruption (minutes):",
+                  min = 0,
+                  max = 10,
+                  value = c(1, 5),
+                  step = 0.25),
       sliderInput(inputId = "bins",
                   label = "Number of bins:",
                   min = 1,
                   max = 50,
                   value = 30),
+      
+    ),
+    
       # ----
       # ADD THIS - double ended range selector
       # ----
@@ -30,7 +39,6 @@ ui <- fluidPage(
     mainPanel(
       plotOutput(outputId = "distPlot")
     )
-  )
 )
 
 # Define server logic required to draw a histogram
