@@ -51,7 +51,7 @@ server <- function(input, output) {
     # CHANGE THIS TO data()
     # ----
     data() %>% ggplot(aes(x = waiting)) +
-      geom_histogram(bins = input$bins, col = "white", fill = "darkred") +
+      geom_histogram(bins = input$bins, col = "white", fill = "darkgreen") +
       xlab("Waiting time (mins)") +
       ylab("Number of eruptions") +
       ggtitle("Histogram of eruption waiting times")
